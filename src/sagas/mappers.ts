@@ -1,13 +1,13 @@
 import * as ApiEntities from '../api/model/pokemon';
 import * as PokemonsReducerEntities from "../pods/pokemons/reducer/model";
 
-export const mapFromPokemonApiToPokemonViewModel = (pokemon: ApiEntities.PokemonEntity, index:number): PokemonsReducerEntities.PokemonEntity => {
+export const mapFromPokemonApiToPokemonViewModel = (pokemon: ApiEntities.PokemonEntity): PokemonsReducerEntities.PokemonEntity => {
     return pokemon == undefined 
     ? 
         createDefaultPokemon()
     :
         {
-            id: ++index,
+            id: parseInt(pokemon.url.split('/')[pokemon.url.split('/').length-2]),
             name: pokemon.name,
         } 
 }

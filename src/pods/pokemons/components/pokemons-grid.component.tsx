@@ -6,6 +6,7 @@ import { PokemonGridBodyContent } from './grid/pokemons-grid-body.component';
 import { Options, pokemonAPI } from '../../../api/pokemons-api';
 import { settings } from '../../../common-app';
 import { PokemonEntity } from 'api/model/pokemon';
+import { mapFromPokemonCollectionVMToPokemonViewModel } from '../pokemons-mapper';
 
 interface PropsInner {
   pokemonList: PokemonEntity[];
@@ -48,6 +49,7 @@ const PokemonsGridComponentInner = (props: PropsInner) => {
 
 interface State {
   actualPage: number;
+  pokemonList: PokemonEntity[];
 }
 
 interface Props {
@@ -63,6 +65,7 @@ export class PokemonsGridComponent extends React.Component<Props, State> {
 
     this.state = {
       actualPage: 1,
+      pokemonList: props.pokemonList,
     }
   }
 
@@ -75,19 +78,23 @@ export class PokemonsGridComponent extends React.Component<Props, State> {
       pageIndex: this.mapFromTablePageIndexToApiPageIndex(page),
       pageSize: settings.pageSize,
     }
-    const pokemonList = pokemonAPI.getAllPokemons(options).then(
-      pokemonList => this.setState({
-        actualPage: page,
-      })
+    pokemonAPI.getAllPokemons(options).then(
+      pokemonList => {
+        this.setState({
+          actualPage: page, 
+          pokemonList: mapFromPokemonCollectionVMToPokemonViewModel(pokemonList.pokemons),
+        });
+      }
     );
   }
 
   mapFromTablePageIndexToApiPageIndex = (page: number): number => {
     return page + 1
   }
+
   render() {
     return (
-      <PokemonsGridComponentInner pokemonList={this.props.pokemonList} onChangePage={this.onChangePage} page={this.state.actualPage} totalResults={this.props.totalResults} />
+      <PokemonsGridComponentInner pokemonList={this.state.pokemonList} onChangePage={this.onChangePage} page={this.state.actualPage} totalResults={this.props.totalResults} />
     )
   }
 }

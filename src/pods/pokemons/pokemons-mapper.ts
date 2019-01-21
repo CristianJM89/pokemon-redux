@@ -7,7 +7,7 @@ export const mapFromPokemonApiToPokemonViewModel = (pokemon: PokemonEntityApi.Po
     createDefaultPokemon()
     :
         {
-            id: pokemon.id,
+            id: parseInt(pokemon.url.split('/')[pokemon.url.split('/').length-2]),
             name: pokemon.name,
         } 
 }

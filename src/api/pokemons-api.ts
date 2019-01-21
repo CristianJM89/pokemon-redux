@@ -20,7 +20,7 @@ const getAllPokemons = (options: Options = createDefaultOptions()): Promise<Poke
 const mapPokemonsListAPItoModel = ({ data }: AxiosResponse<PokemonEntity[]>) =>
     ({
         pokemons: data.results.map(pokemon => pokemon),
-        total: parseInt(data.results.length),
+        total: parseInt(data.count),
     })
 
 const getPokemonById = (id: number): Promise<PokemonEntity> => {

@@ -29,4 +29,4 @@ export const getFilteredPokemons = createSelector(getPokemonsData, getFilter, (p
   return filter.length > 0 ? filteredPokemons(pokemons, filter) : pokemons;
 });*/
 
-export const getFilteredPokemons = createSelector(getPokemonsData, getFilter, (pokemons, filter) => {console.log(pokemons,filter);})
+export const getFilteredPokemons = createSelector(getPokemonsData, getFilter, (pokemons, filter) => {/*console.log(pokemons,filter);*/})

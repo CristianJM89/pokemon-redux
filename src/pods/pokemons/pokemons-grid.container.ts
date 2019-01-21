@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { PokemonsGridComponent } from './components';
-
 import { pokemonsRequestAction } from './actions/pokemons.actions';
 import { RootState } from '../../reducer';
 
