@@ -38,12 +38,14 @@ export const pokemonAPI = {
 }
 
 export interface Options {
-    limit: number;
+    pageSize: number,
+    pageIndex: number,
 }
 
 export const createDefaultOptions = (): Options => (
     {
-        limit: 720,
+        pageSize: 30,
+        pageIndex: 1,
     }
 );
 

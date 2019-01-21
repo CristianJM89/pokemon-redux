@@ -72,9 +72,8 @@ export class PokemonsGridComponent extends React.Component<Props, State> {
 
   onChangePage = (event: object, page: number) => {
     const options: Options = {
-      //pageIndex: this.mapFromTablePageIndexToApiPageIndex(page),
-      //pageSize: settings.pageSize,
-      limit: undefined,
+      pageIndex: this.mapFromTablePageIndexToApiPageIndex(page),
+      pageSize: settings.pageSize,
     }
     const pokemonList = pokemonAPI.getAllPokemons(options).then(
       pokemonList => this.setState({

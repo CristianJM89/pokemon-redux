@@ -15,7 +15,8 @@ function* loadPokemons(){
 	{	
 		//const filter : PokemonFilter = action.payload; 	If the filter is needed for be dispatched
 		const options : Options = {
-			limit:settings.limit,
+			pageIndex:1,
+			pageSize:settings.pageSize,
 		  };
 		const pokemonList : PokemonList = yield call(pokemonAPI.getAllPokemons, options);
 		yield put(pokemonsRequestActionCompleted(mapEntityFromApiPokemonToReducerPokemons(pokemonList)));
