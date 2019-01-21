@@ -1,0 +1,1 @@
+export {PokemonEntity, PokemonDetailedEntity, TypeEntity, TypesEntity} from './pokemon';
