@@ -9,7 +9,7 @@ const getPokemonsURL = settings.API_Pokemon_URL;
 const getAllPokemons = (options: Options = createDefaultOptions()): Promise<PokemonList> => {
     const getPokemons = calculateUrlStringByOptions(options, getPokemonsURL);
     const promise: Promise<PokemonList> = new Promise((resolve, reject) =>
-        Axios.get<PokemonEntity[]>(getPokemons)
+        Axios.get<any>(getPokemons)
             .then(response => resolve(mapPokemonsListAPItoModel(response)))
             .catch(error => reject(error))
     );
@@ -17,7 +17,7 @@ const getAllPokemons = (options: Options = createDefaultOptions()): Promise<Poke
     return promise;
 }
 
-const mapPokemonsListAPItoModel = ({ data }: AxiosResponse<PokemonEntity[]>) =>
+const mapPokemonsListAPItoModel = ({ data }: AxiosResponse<any>) =>
     ({
         pokemons: data.results.map(pokemon => pokemon),
         total: parseInt(data.count),

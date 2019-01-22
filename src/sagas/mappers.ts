@@ -1,7 +1,7 @@
 import * as ApiEntities from '../api/model/pokemon';
 import * as PokemonsReducerEntities from "../pods/pokemons/reducer/model";
 
-export const mapFromPokemonApiToPokemonViewModel = (pokemon: ApiEntities.PokemonEntity): PokemonsReducerEntities.PokemonEntity => {
+export const mapFromPokemonApiToPokemonViewModel = (pokemon: any): PokemonsReducerEntities.PokemonEntity => {
     return pokemon == undefined 
     ? 
         createDefaultPokemon()
