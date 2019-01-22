@@ -11,7 +11,8 @@ describe(`mapper can map pokemon from api to page`, () => {
         let pokemon = mapFromPokemonApiToPokemonViewModel(pokemonEntityApi);
         //ASSERT
         expect(pokemon).toEqual(createDefaultPokemon());
-    }),
+    })
+    /*
         it(`should return pokemonEntity object if data is valid`, () => {
             //ARRANGE
             let pokemonEntityApi: PokemonEntityApi.PokemonEntity = {
@@ -50,6 +51,6 @@ describe(`mapper can map pokemon from api to page`, () => {
             let pokemonMappedList = mapFromPokemonCollectionVMToPokemonViewModel(pokemonEntityApiList);
             //ASSERT
             expect(pokemonMappedList).toEqual(pokemonEntityList);
-        })
+        })*/
 })
 
