@@ -4,18 +4,7 @@ import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
 import createStyles from '@material-ui/core/styles/createStyles';
-
-const styles = () => createStyles({
-    tableHead: {
-        backgroundColor: '#3f51b5',
-    },
-    tableCellStyle: {
-        color: 'white',
-        fontSize: '1rem',
-        fontFamily: "Roboto",
-        fontWeight: 'bolder',
-    },
-});
+import { styles } from './pokemons-grid.styles';
 
 interface Props extends WithStyles<typeof styles> {
 }

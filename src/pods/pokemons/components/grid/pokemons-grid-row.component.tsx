@@ -6,19 +6,11 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import { navigationRoutes } from "../../../../common-app/router";
 import { PokemonEntity } from "../../pokemons.vm";
+import { styles } from "./pokemons-grid.styles";
 
 interface Props extends WithStyles<typeof styles> {
     pokemon: PokemonEntity;
 }
-
-const styles = () => createStyles({
-    pokemon: {
-        '&:nth-of-type(odd)': {
-            backgroundColor: '#fafafa',
-        },
-        fontFamily: "Roboto",   
-    },
-});
 
 export const PokemonGridRowContentInner = (props: Props) => {
     const { classes, pokemon } = props;
@@ -26,11 +18,7 @@ export const PokemonGridRowContentInner = (props: Props) => {
     return (
         <TableRow className={classes.pokemon} >
             <TableCell component="td" scope="row">
-                <Link to={navigationRoutes.pokemonDetail(pokemon.id)} style={{
-                    fontWeight: 'bold',
-                    textDecoration: 'none',
-                    color: '#06c',
-                }}>{pokemon.id}</Link>
+                <Link to={navigationRoutes.pokemonDetail(pokemon.id)} className={classes.idLink}>{pokemon.id}</Link>
             </TableCell>
             <TableCell style={{ textTransform: 'capitalize'}} align="right">{pokemon.name}</TableCell>
         </TableRow>

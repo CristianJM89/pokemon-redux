@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
+import { WithStyles, withStyles } from '@material-ui/core/styles';
 import { CardActions, IconButton } from '@material-ui/core';
 import { PokemonDetailsVM } from '../pokemon-details.vm';
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -13,16 +13,16 @@ interface Props extends WithStyles<typeof styles> {
 }
 
 const PokemonActionsInner = (props: Props) => {
-    const { classes } = props;
+    const { classes, pokemonDetails } = props;
     return (
         <CardActions className={classes.actions} disableActionSpacing>
-            <Link to="/" aria-label="Back" style={{padding: '12px'}}>
+            <Link to="/" aria-label="Back" className={classes.linkBack}>
                 <ArrowBackIcon />
             </Link>
-            <IconButton aria-label="Add to favorites" onClick={() => { alert(props.pokemonDetails.name + ' Added as a favorite') }}>
+            <IconButton aria-label="Add to favorites" onClick={() => { alert(pokemonDetails.name + ' Added as a favorite') }}>
                 <FavoriteIcon />
             </IconButton>
-            <IconButton aria-label="Share" onClick={() => { alert(props.pokemonDetails.name + ' shared') }}>
+            <IconButton aria-label="Share" onClick={() => { alert(pokemonDetails.name + ' shared') }}>
                 <ShareIcon />
             </IconButton>
         </CardActions>

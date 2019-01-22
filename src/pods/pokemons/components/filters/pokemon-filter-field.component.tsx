@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { WithStyles, withStyles, InputBase } from '@material-ui/core';
-import { styles } from './filter-styles';
+import { styles } from './pokemon-filter.styles';
 
 interface Props extends WithStyles<typeof styles> {
     title: string,

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { PokemonFilterComponent } from './components/pokemon-filter.component';
 import { pokemonsRequestAction } from './actions/pokemons.actions';
-import { filterPokemons } from './actions/filter.actions';
+import { filterPokemons } from './actions/pokemon-filter.actions';
 import { PokemonFilter } from './pokemons.vm';
 import { RootState } from '../../reducer';
 import * as selectors from "./selectors";

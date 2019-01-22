@@ -30,5 +30,8 @@ export const styles = (theme: Theme) => createStyles({
     actions: {
         display: 'flex',
         justifyContent: 'center',
+    },
+    linkBack: {
+        padding: '12px',
     }
 });

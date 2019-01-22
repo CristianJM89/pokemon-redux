@@ -8,7 +8,7 @@ export interface RootState {
   router:any,
   pokemons: PokemonReducerState,
   pokemonDetails: PokemonDetailsRootState,
-  pokemonFilter: string,
+  //pokemonFilter: string,
 }
 
 // Root reducer.
@@ -16,4 +16,5 @@ export const createRootReducer = (history) => combineReducers({
   router: connectRouter(history),
   pokemons: pokemonReducers,
   pokemonDetails: pokemonDetailsReducers,
+  //pokemonFilter: pokemonFilterReducers
 });

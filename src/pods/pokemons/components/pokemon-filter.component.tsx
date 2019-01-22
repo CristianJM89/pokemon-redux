@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { WithStyles, AppBar, Toolbar } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import { styles } from './filters/filter-styles';
+import { styles } from './filters/pokemon-filter.styles';
 import { PokemonFilter } from '../pokemons.vm';
 import { PokemonFilterTitleComponent } from './filters/pokemon-filter-title.component';
 import { PokemonFilterFieldComponent } from './filters/pokemon-filter-field.component';
