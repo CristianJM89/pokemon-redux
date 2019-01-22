@@ -6,14 +6,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { Link } from 'react-router-dom';
-
-
-const styles = theme => createStyles({
-    actions: {
-        display: 'flex',
-        justifyContent: 'center',
-    }
-});
+import { styles } from './pokemon-details.styles.component';
 
 interface Props extends WithStyles<typeof styles> {
     pokemonDetails: PokemonDetailsVM;

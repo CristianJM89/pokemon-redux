@@ -1,5 +1,5 @@
 import { all, fork } from 'redux-saga/effects';
-import {watchPokemonRequest} from './pokemonRequest'
+import {watchPokemonRequest} from '../pods/pokemons/sagas/pokemons-request.saga'
 import { watchSinglePokemonRequest } from '../pods/pokemon-detail/sagas/';
 
 // Register allwatchFilterGridRequest your watchers

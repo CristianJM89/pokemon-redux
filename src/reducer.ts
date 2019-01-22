@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router'
 import { pokemonReducers, PokemonReducerState } from "./pods/pokemons/reducer";
 import { PokemonDetailsRootState, pokemonDetailsReducers } from 'pods/pokemon-detail/reducers';
+import { string } from 'prop-types';
 
 export interface RootState {
   router:any,

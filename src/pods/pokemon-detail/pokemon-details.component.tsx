@@ -6,20 +6,7 @@ import { PokemonDetailsContent } from './components/pokemon-details-content.comp
 import { PokemonActions } from './components/pokemon-details-actions.component';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { getPokemonId } from './pokemon-details.container.business';
-
-const styles = theme => createStyles({
-    root: {
-        paddingTop: theme.spacing.unit * 2,
-        paddingBottom: theme.spacing.unit * 2,
-        width: '500px',
-        overflow: 'auto',
-    },
-    cardHeader: {
-        fontWeight: 'bold',
-        textAlign: 'center',
-        textTransform: 'capitalize',
-    }
-});
+import { styles } from './pokemon-details.styles';
 
 interface Props extends RouteComponentProps, WithStyles<typeof styles> {
     pokemonDetails : PokemonDetailsVM;
@@ -36,7 +23,7 @@ class PokemonDetailsInner extends React.PureComponent<Props, {}> {
         const {classes, pokemonDetails} = this.props;
         return(
             <Card className={classes.root}>
-                <CardHeader title={pokemonDetails.name} className={classes.cardHeader} />
+                <CardHeader title={`#${pokemonDetails.id} ${pokemonDetails.name}`} className={classes.cardHeader} />
                 <PokemonDetailsContent pokemonDetails={pokemonDetails} />
                 <PokemonActions pokemonDetails={pokemonDetails} />
             </Card>
